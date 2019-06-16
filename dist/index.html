@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>My custom Bulma website</title>
+    <link rel="stylesheet" href="css/main.bundle.css">
+    <script defer src="js/bundle.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Download Kubernetes
+                </h1>
+                <h2 class="subtitle">
+                    An easier way to get the binaries you need (or a link to them)
+                </h2>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Binaries</p>
+                    <div class="buttons has-addons" id="binaries">
+                        <button class="button is-info" data-binaries="client">
+                            <span>Client</span>
+                        </button>
+                        <button class="button" data-binaries="server">
+                            <span>Server</span>
+                        </button>
+                        <button class="button" data-binaries="node">
+                            <span>Node</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">
+                        Operating System (OS)
+                    </p>
+                    <div class="buttons has-addons" id="oses">
+                        <button class="button is-info" data-os="osx">
+                            <span class="icon is-small"><i class="fab fa-apple" aria-hidden="true"></i></span>
+                            <span>OS X</span>
+                        </button>
+                        <button class="button" data-os="linux">
+                            <span class="icon is-small"><i class="fab fa-linux" aria-hidden="true"></i></span>
+                            <span>Linux</span>
+                        </button>
+                        <button class="button" data-os="windows">
+                            <span class="icon is-small"><i class="fab fa-windows" aria-hidden="true"></i></span>
+                            <span>Windows</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">
+                        Architecture
+                    </p>
+                    <div class="buttons has-addons" id="architectures">
+                        <button class="button is-info" data-architecture="amd64">
+                            <span>amd64</span>
+                        </button>
+                        <button class="button" data-architecture="386">
+                            <span>386</span>
+                        </button>
+                        <button class="button" data-architecture="arm64">
+                            <span>arm64</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">
+                        Version
+                    </p>
+                    <div class="buttons has-addons" id="versions">
+                        <button class="button is-info" data-version="1.14.1">
+                            <span>1.14.1</span>
+                        </button>
+                        <button class="button" data-version="1.14.2">
+                            <span>1.14.2</span>
+                        </button>
+                        <button class="button" data-version="1.14.0">
+                            <span>1.14.0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <div class="section">
+        <div class="columns">
+            <div class="column is-hidden-mobile"></div>
+            <div class="column is-two-thirds has-text-centered">
+                <div class="field has-addons">
+                    <p class="control is-expanded">
+                        <input id="dlurl" class="input" type="text" placeholder="">
+                    </p>
+                    <p class="control">
+                        <button class="button" id="clipboard">
+                            <span class="icon has-text-info">
+                                <i class="far fa-clipboard"></i>
+                            </span>
+                        </button>
+                    </p>
+                </div>
+            </div>
+            <div class="column is-hidden-mobile"></div>
+        </div>
+        <div class="columns">
+            <div class="column is-hidden-mobile"></div>
+            <div class="column is-half has-text-centered">
+                <a class="button is-large" id="downloadbutton" href="changeme">
+                    <span class="icon">
+                        <i class="fas fa-download"></i>
+                    </span>
+                    <span>Download</span>
+                </a>
+            </div>
+            <div class="column is-hidden-mobile"></div>
+        </div>
+    </div>
+    <footer class="footer">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div class="has-text-centered">
+                    <p class="heading">Find me on the Kubernetes slack (@cha)</p>
+                    <figure class="image is-64x64 figure-center">
+                        <a href="http://slack.k8s.io"><img src="img/slack.png" /></a>
+                    </figure>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Tweet at me!</p>
+                    <figure class="image is-64x64 figure-center">
+                        <a href="https://twitter.com/chuck_ha"><img src="img/twitter.png" /></a>
+                    </figure>
+                </div>
+            </div>
+        </nav>
+    </footer>
+</body>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142101933-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142101933-1');
+</script>
+
+</html>
+
+
