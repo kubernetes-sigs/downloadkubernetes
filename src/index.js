@@ -5,6 +5,7 @@ const linux = "linux";
 const osx = "osx";
 const windows = "windows";
 const arm = "arm64";
+const amd = "amd64";
 const client = "client";
 const server = "server";
 const node = "node";
@@ -188,6 +189,7 @@ function updateOperatingSystemButton(buttonGroup, binary) {
                     child.disabled = true;
                 }
             }
+            break;
         default:
             console.log("unknown binary");
     }
@@ -209,13 +211,17 @@ function updateOperatingSystemButtonForArch(buttonGroup, arch) {
                 }
             }
             break;
+        case amd:
+            // if binaires are node, enable windows
+            if (binary.activeData === node) {
+                for (let i=0; i < buttonGroup.buttons.length; i++) {
+                    if (buttonGroup.buttons[i].dataset.os === windows) {
+                        buttonGroup.buttons[i].disabled = false;
+                    }
+                }
+            }
+            break;
         default:
-            if (binary.activeData === server || binary.activeData === node) {
-                break;
-            }
-            for (let i=0; i < buttonGroup.buttons.length; i++) {
-                buttonGroup.buttons[i].disabled = false;
-            }
             break;
     }
 }
