@@ -4,6 +4,10 @@ const activeClass = "is-info";
 const linux = "linux";
 const osx = "osx";
 const windows = "windows";
+const arm = "arm64";
+const client = "client";
+const server = "server";
+const node = "node";
 
 const downloadInput = document.getElementById("dlurl");
 const copyIcon = document.getElementById("clipboard");
@@ -41,6 +45,19 @@ function init() {
         child.addEventListener("click", function(_) {
             // since binary buttons have requirements run those here
             updateOperatingSystemButton(os, this.dataset.binaries);
+
+            // regenerate the URL after updating the active os.
+            // TODO would prefer to use events to make this happen.
+            os.update();
+            generateURL();
+        });
+    }
+
+    // set up dependency between arch and OS
+    for (let i=0; i < arch.buttons.length; i++) {
+        let child = arch.buttons[i];
+        child.addEventListener("click", function(_){
+            updateOperatingSystemButtonForArch(os, this.dataset.architecture);
 
             // regenerate the URL after updating the active os.
             // TODO would prefer to use events to make this happen.
@@ -112,7 +129,6 @@ function enableActiveClicks(bg) {
     for (let i=0; i < buttons.length; i++) {
         let child = buttons[i];
         child.addEventListener("click", function(_){
-            console.log(this);
             this.classList.add(activeClass)
             for (let j=0; j < buttons.length; j++) {
                 if (j == i) {
@@ -128,13 +144,58 @@ function enableActiveClicks(bg) {
 
 function updateOperatingSystemButton(buttonGroup, binary) {
     switch (binary) {
-        case "client":
+        case client:
+            if (arch.activeData === arm) {
+                break;
+            }
             for (let i=0; i < buttonGroup.buttons.length; i++) {
                 buttonGroup.buttons[i].disabled = false;
             }
             break;
-        case "server":
-        case "node":
+        case server:
+            // select linux, disable other two oses
+            for (let i=0; i < buttonGroup.buttons.length; i++) {
+                let child = buttonGroup.buttons[i];
+                let os = child.dataset.os;
+                if (os === linux) {
+                    child.classList.add(activeClass);
+                }
+                if (os === windows || os === osx) {
+                    child.classList.remove(activeClass);
+                    child.disabled = true;
+                }
+            }
+            break;
+        case node:
+            // enable windows but not if arm is selected
+            for (let i=0; i < buttonGroup.buttons.length; i++) {
+                if (arch.activeData === arm) {
+                    continue
+                }
+                if (buttonGroup.buttons[i].dataset.os === windows) {
+                    buttonGroup.buttons[i].disabled = false;
+                }
+            }
+            // select linux, disable os x
+            for (let i=0; i < buttonGroup.buttons.length; i++) {
+                let child = buttonGroup.buttons[i];
+                let os = child.dataset.os;
+                if (os === linux) {
+                    child.classList.add(activeClass);
+                }
+                if (os === osx) {
+                    child.classList.remove(activeClass);
+                    child.disabled = true;
+                }
+            }
+        default:
+            console.log("unknown binary");
+    }
+}
+
+function updateOperatingSystemButtonForArch(buttonGroup, arch) {
+    switch (arch) {
+        case arm:
             // select linux, disable other two oses
             for (let i=0; i < buttonGroup.buttons.length; i++) {
                 let child = buttonGroup.buttons[i];
@@ -149,6 +210,12 @@ function updateOperatingSystemButton(buttonGroup, binary) {
             }
             break;
         default:
-            console.log("unknown binary");
+            if (binary.activeData === server || binary.activeData === node) {
+                break;
+            }
+            for (let i=0; i < buttonGroup.buttons.length; i++) {
+                buttonGroup.buttons[i].disabled = false;
+            }
+            break;
     }
 }
