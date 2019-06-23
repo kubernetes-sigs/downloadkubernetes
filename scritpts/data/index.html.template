@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Download Kubernetes</title>
+    <link rel="stylesheet" href="css/main.bundle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="js/bundle.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Download Kubernetes
+                </h1>
+                <h2 class="subtitle">
+                    An easier way to get the binaries you need (or a link to them)
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Operating Systems</p>
+                    <div class="buttons has-addons" id="os">
+                        {{range .AllOSes }}<span class="button" data-os="{{.}}">{{.}}</span>
+                    {{end}}</div>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Architectures</p>
+                    <div class="buttons has-addons" id="arch">
+                        {{range .AllArch}}<span class="button" data-arch="{{clean .}}">{{.}}</span>
+                    {{end}}</div>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Versions</p>
+                    <div class="buttons has-addons" id="version">
+                        {{range .AllVersions}}<span class="button" data-version="{{clean .}}">{{.}}</span>
+                    {{end}}</div>
+                </div>
+            </div>
+        </nav>
+        <table class="table is-fullwidth">
+            <thead>
+                <tr>
+                    <th>Version</th>
+                    <th>Operating System</th>
+                    <th>Architecture</th>
+                    <th>Binary</th>
+                    <th>Download Link</th>
+                </tr>
+            </thead>
+            <tbody>
+{{range .Binaries}}{{.Row}}{{end}}
+            </tbody>
+        </table>
+    </section>
+
+    <footer class="footer">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">This is open source!</p>
+                    <figure class="title image is-64x64 figure-center">
+                        <a href="https://github.com/chuckha/downloadkubernetes"><img src="img/github.png" /></a>
+                    </figure>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div class="has-text-centered">
+                    <p class="heading">Find me on the Kubernetes slack (@cha)</p>
+                    <figure class="image is-64x64 figure-center">
+                        <a href="http://slack.k8s.io"><img src="img/slack.png" /></a>
+                    </figure>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Tweet at me!</p>
+                    <figure class="image is-64x64 figure-center">
+                        <a href="https://twitter.com/chuck_ha"><img src="img/twitter.png" /></a>
+                    </figure>
+                </div>
+            </div>
+        </nav>
+    </footer>
+</body>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142101933-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142101933-1');
+</script>
+
+</html>
+
+

@@ -4,3 +4,7 @@
 .figure-center {
     margin: auto;
 }
+
+.os-hide, .version-hide, .arch-hide, .bin-hide {
+    display: none !important;
+}
