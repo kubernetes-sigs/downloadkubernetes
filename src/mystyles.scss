@@ -1,14 +1,252 @@
-@charset "utf-8";
-
-$kubernetes: hsl(219, 76%, 55%);
-$primary: $kubernetes;
-
-@import "~bulma/bulma";
-
-.figure-center {
-    margin: auto;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	border: 0;
+	font: inherit;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-.os-hide, .version-hide, .arch-hide, .bin-hide {
-    display: none !important;
+$blue: #326CE5;
+$black: #333333;
+$gray-dark: #888888;
+$gray-light: #DDDDDD;
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+}
+
+.header_bg {
+  background-image: linear-gradient(-73deg, #709DFB 0%, #326CE5 99%);
+  height: 280px;
+  width: 110vw;
+  transform: rotate(-2deg);
+  position: absolute;
+  top: -140px;
+  left: -100px;
+  z-index: 1;
+}
+
+.header_bg_angle {
+  width: 330px;
+  height: 140px;
+  position: absolute;
+  top: 100px;
+  left: -124px;
+  background: white;
+  z-index: 3;
+  transform: rotate(20deg);
+}
+
+.title {
+  color: white;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: white;
+  font-size: 20px;
+  padding-top: 2px;
+}
+
+header {
+  z-index: 9999;
+  position: relative;
+  padding: 40px 0 0 220px;
+}
+
+.social {
+  position: absolute;
+  top: 18px;
+  right: 14px;
+  z-index: 9999;
+
+  a {
+    text-decoration: none;
+  }
+
+    svg {
+      margin:  0 10px;
+      width: 30px;
+      transition: all 80ms;
+    }
+}
+
+svg:hover {
+  path {
+    fill: #EEEEEE;
+  }
+}
+
+
+.section {
+  z-index: 99;
+  align-self: center;
+  position: relative;
+  padding-top: 100px;
+  width: 95%;
+  max-width: 1400px;
+}
+
+.level {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading {
+  font-size: 15px;
+  color: $gray-dark;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.button {
+  padding: 8px 16px;
+  border: 1px solid $gray-dark;
+  border-radius: 3px;
+  color: $black;
+  cursor: pointer;
+}
+
+.button:hover {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.15);
+}
+
+.buttons.has-addons .button:not(:last-child) {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  margin-right: -5px;
+}
+
+.buttons.has-addons .button:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.is-success {
+  background: $blue;
+  border-color: transparent;
+  color: white;
+}
+
+table {
+  margin-top: 40px;
+  width: 100%;
+}
+
+th {
+  font-weight: 700;
+  text-align: left;
+  padding-bottom: 6px;
+}
+
+tr {
+  border-bottom: 1px solid $gray-light;
+  transition: all 60ms;
+}
+
+tr:hover {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.15);
+  transition: all 60ms;
+}
+
+.row_heading:hover {
+  box-shadow: none;
+}
+
+td {
+  padding: 12px 0;
+}
+
+th:nth-child(1) {
+  padding-left: 8px;
+}
+
+td:nth-child(1) {
+  padding-left: 8px;
+}
+
+@media only screen and (max-width: 1100px) {
+  .level {
+    flex-direction: column;
+  }
+
+  .level-item {
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  header {
+    padding: 50px 0 0 20px;
+  }
+
+  .social {
+    svg {
+      width: 20px;
+      margin: 0 8px;
+    }
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .header_bg_angle {
+    display: none;
+  }
+
+  .header_bg {
+    width: 125vw;
+  }
+
+
 }
