@@ -197,7 +197,7 @@ func main() {
 	sort.Sort(Binaries(binaries))
 	tmpl, err := template.New("index.html.template").Funcs(map[string]interface{}{
 		"clean": interface{}(clean),
-	}).ParseFiles("scripts/data/index.html.template")
+	}).ParseFiles("data/index.html.template")
 	if err != nil {
 		panic(err)
 	}
@@ -224,7 +224,7 @@ func main() {
 	}); err != nil {
 		panic(err)
 	}
-	ioutil.WriteFile("./dist/index.html", buf.Bytes(), os.FileMode(0644))
+	ioutil.WriteFile("../dist/index.html", buf.Bytes(), os.FileMode(0644))
 }
 
 func shouldInclude(path string) bool {
