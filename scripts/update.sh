@@ -5,13 +5,19 @@ set -o xtrace
 
 cd scripts
 go run ./generate-index.go
-npm run build-prod
-#git add dist/index.html
-#git commit -s -m 'Generating new index'
+cd ..
 
-# echo "Building Images"
-# ./build-images.sh
-# echo "Pushing Images"
-# ./push-images.sh
-# echo "Deploying changes"
-# ./deploy.sh
+echo "Building Images"
+./scripts/build-images.sh
+echo "Pushing Images"
+./scripts/push-images.sh
+echo "Deploying changes"
+./scripts/deploy.sh
+
+cd ..
+git add dist/index.html
+git status
+read "does this look ok? about to commit and push anything but <ctrl-c> continues"
+git commit -s -m 'Generating new index'
+git push
+
