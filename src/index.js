@@ -14,7 +14,6 @@ function eventListener(kind) {
     let hideClass = kind + "-hide";
 
     buttonGroup.forEach(button => {
-        console.log(button);
         button.addEventListener('click', (evt) => {
             let buttonData = button.dataset[kind];
             buttonGroup.forEach(b => {
