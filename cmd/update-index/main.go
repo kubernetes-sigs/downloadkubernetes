@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"context"
+	"flag"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -129,7 +130,16 @@ func (v versions) Less(i, j int) bool {
 }
 func (v versions) Swap(i, j int) { v[i], v[j] = v[j], v[i] }
 
+type arguments struct {
+	templateFile string
+}
+
 func main() {
+	fmt.Println(os.Args[1:])
+	args := &arguments{}
+	fs := flag.NewFlagSet("arguments", flag.ExitOnError)
+	fs.StringVar(&args.templateFile, "index-template", "./cmd/update-index/data/index.html.template", "path to the index.html template file")
+	fs.Parse(os.Args[1:])
 
 	re := regexp.MustCompile(`release/(v\d+\.\d+\.\d+)/bin/([a-zA-Z]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-\.]+)`)
 
@@ -197,7 +207,7 @@ func main() {
 	sort.Sort(Binaries(binaries))
 	tmpl, err := template.New("index.html.template").Funcs(map[string]interface{}{
 		"clean": interface{}(clean),
-	}).ParseFiles("data/index.html.template")
+	}).ParseFiles(args.templateFile)
 	if err != nil {
 		panic(err)
 	}

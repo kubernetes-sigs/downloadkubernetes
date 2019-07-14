@@ -3,21 +3,18 @@
 set -o errexit
 set -o xtrace
 
-cd scripts
-go run ./generate-index.go
-cd ..
+echo "updating index..."
+go run ./cmd/update-index/ -index-template ./cmd/update-index/data/index.html.template
 
-echo "Building Images"
+echo "building images"
 ./scripts/build-images.sh
-echo "Pushing Images"
+echo "pushing images"
 ./scripts/push-images.sh
-echo "Deploying changes"
+echo "deploying changes"
 ./scripts/deploy.sh
 
-cd ..
 git add dist/index.html
 git status
-read "does this look ok? about to commit and push anything but <ctrl-c> continues"
+read "does this look ok? about to commit and push. <C-c> to cancel."
 git commit -s -m 'Generating new index'
 git push
-
