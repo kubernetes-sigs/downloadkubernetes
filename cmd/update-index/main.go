@@ -132,13 +132,14 @@ func (v versions) Swap(i, j int) { v[i], v[j] = v[j], v[i] }
 
 type arguments struct {
 	templateFile string
+	outputFile   string
 }
 
 func main() {
-	fmt.Println(os.Args[1:])
 	args := &arguments{}
 	fs := flag.NewFlagSet("arguments", flag.ExitOnError)
 	fs.StringVar(&args.templateFile, "index-template", "./cmd/update-index/data/index.html.template", "path to the index.html template file")
+	fs.StringVar(&args.outputFile, "index-output", "./dist/index.html", "the location of the file this program writes")
 	fs.Parse(os.Args[1:])
 
 	re := regexp.MustCompile(`release/(v\d+\.\d+\.\d+)/bin/([a-zA-Z]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-\.]+)`)
@@ -234,7 +235,7 @@ func main() {
 	}); err != nil {
 		panic(err)
 	}
-	ioutil.WriteFile("../dist/index.html", buf.Bytes(), os.FileMode(0644))
+	ioutil.WriteFile(args.outputFile, buf.Bytes(), os.FileMode(0644))
 }
 
 func shouldInclude(path string) bool {
