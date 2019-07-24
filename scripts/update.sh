@@ -15,6 +15,6 @@ echo "deploying changes"
 
 git add dist/index.html
 git status
-read "does this look ok? about to commit and push. <C-c> to cancel."
+read -p "does this look ok? about to commit and push. <C-c> to cancel."
 git commit -s -m 'Generating new index'
 git push
