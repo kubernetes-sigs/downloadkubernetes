@@ -13,8 +13,3 @@ echo "pushing images"
 echo "deploying changes"
 ./scripts/deploy.sh
 
-git add dist/index.html
-git status
-read -p "does this look ok? about to commit and push. <C-c> to cancel."
-git commit -s -m 'Generating new index'
-git push
