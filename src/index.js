@@ -37,7 +37,7 @@ document.querySelectorAll(".copy").forEach(link => {
         evt.preventDefault();
 
         let el = document.createElement("textarea");
-        el.value = this.href;
+        el.value = link.href;
         el.setAttribute("readonly", "");
         el.style.position = 'absolute';
         el.style.left = '-9999px';
