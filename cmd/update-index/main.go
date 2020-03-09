@@ -102,12 +102,12 @@ func (b Binary) Row() string {
 	<td>%s</td>
 	<td>%s</td>
 	<td>%s</td>
-	<td>%s</td>
-	<td><a class="copy" href="%s">copy link</a></td>`, b.Version, b.OperatingSystem, b.Architecture, b.Name, b.downloadLink())
+    <td><span title="download"><a href="https://%s">%s</a></span></td>
+    <td><span class="icon"><i class="fa fa-copy"></i></span><span title="copy to clipboard"><a class="copy" href="https://%s">  %s</a></span></td>`, b.Version, b.OperatingSystem, b.Architecture, b.downloadLink(), b.Name, b.downloadLink(), b.downloadLink())
 	return fmt.Sprintf(tr, rows)
 }
 func (b Binary) downloadLink() string {
-	return fmt.Sprintf("https://storage.googleapis.com/kubernetes-release/release/%s/bin/%s/%s/%s", b.Version, b.OperatingSystem, b.Architecture, b.Name)
+	return fmt.Sprintf("dl.k8s.io/%s/bin/%s/%s/%s", b.Version, b.OperatingSystem, b.Architecture, b.Name)
 }
 
 func (b Binary) version() version {

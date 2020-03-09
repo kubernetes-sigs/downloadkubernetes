@@ -60,7 +60,7 @@
             </div>
             <div class="level-item has-text-centered">
                 <div>
-                    <p class="heading">Versions</p>
+                    <p class="heading">Stable Versions</p>
                     <div class="buttons has-addons" id="version">
                         {{range .AllVersions}}<span class="button" data-version="{{clean .}}">{{.}}</span>
                     {{end}}</div>
@@ -73,8 +73,8 @@
                     <th>Version</th>
                     <th>Operating System</th>
                     <th>Architecture</th>
-                    <th>Binary</th>
-                    <th>Download Link</th>
+                    <th>Download Binary</th>
+                    <th>Copy Link</th>
                 </tr>
             </thead>
             <tbody>
