@@ -7,19 +7,21 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-prod": "webpack --mode production",
     "build": "./node_modules/.bin/webpack --mode development",
-    "start": "npm run build -- --watch"
+    "start": "npm run build -- --watch",
+    "update": "ncu -u"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "bulma": "^0.7.5",
-    "css-loader": "^3.6.0",
+    "bulma": "^0.9.0",
+    "css-loader": "^4.2.2",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "mini-css-extract-plugin": "^0.7.0",
+    "mini-css-extract-plugin": "^0.10.0",
     "node-sass": "^4.14.1",
-    "sass-loader": "^7.2.0",
-    "style-loader": "^0.23.1",
+    "sass-loader": "^10.0.1",
+    "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "npm-check-updates": "^7.1.1"
   }
 }
