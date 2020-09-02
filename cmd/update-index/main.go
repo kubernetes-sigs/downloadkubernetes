@@ -26,22 +26,21 @@ import (
 	"os"
 	"regexp"
 	"sort"
-	"strconv"
 	"strings"
 	"text/template"
 
 	"cloud.google.com/go/storage"
+	"github.com/blang/semver"
+	"github.com/pkg/errors"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
+
+	"k8s.io/release/pkg/util"
 )
 
 const (
 	numberOfVersions = 5
 )
-
-type version struct {
-	major, minor, patch int
-}
 
 type Binary struct {
 	Version         string
@@ -62,6 +61,7 @@ func (b Binaries) AllArch() []string {
 	}
 	return out
 }
+
 func (b Binaries) AllOSes() []string {
 	allVersions := map[string]struct{}{}
 	for _, bin := range b {
@@ -73,6 +73,7 @@ func (b Binaries) AllOSes() []string {
 	}
 	return out
 }
+
 func (b Binaries) AllBins() []string {
 	allVersions := map[string]struct{}{}
 	for _, bin := range b {
@@ -87,18 +88,27 @@ func (b Binaries) AllBins() []string {
 }
 
 func (b Binaries) Len() int { return len(b) }
+
 func (b Binaries) Less(i, j int) bool {
-	iVersion := b[i].version()
-	jVersion := b[j].version()
-	if iVersion.major != jVersion.major {
-		return iVersion.major > jVersion.major
+	iVersion, err := b[i].version()
+	if err != nil {
+		log.Fatal(err)
 	}
-	if iVersion.minor != jVersion.minor {
-		return iVersion.minor > jVersion.minor
+	jVersion, err := b[j].version()
+	if err != nil {
+		log.Fatal(err)
 	}
-	if iVersion.patch != jVersion.patch {
-		return iVersion.patch > jVersion.patch
+
+	if iVersion.Major != jVersion.Major {
+		return iVersion.Major > jVersion.Major
 	}
+	if iVersion.Minor != jVersion.Minor {
+		return iVersion.Minor > jVersion.Minor
+	}
+	if iVersion.Patch != jVersion.Patch {
+		return iVersion.Patch > jVersion.Patch
+	}
+
 	if b[i].OperatingSystem != b[j].OperatingSystem {
 		return b[i].OperatingSystem < b[j].OperatingSystem
 	}
@@ -107,11 +117,13 @@ func (b Binaries) Less(i, j int) bool {
 	}
 	return b[i].Name < b[j].Name
 }
+
 func (b Binaries) Swap(i, j int) { b[i], b[j] = b[j], b[i] }
 
 func (b Binary) String() string {
 	return fmt.Sprintf("%s %s %s %s", b.Name, b.Version, b.OperatingSystem, b.Architecture)
 }
+
 func (b Binary) Row() string {
 	tr := fmt.Sprintf(`<tr class="%s %s %s %s">%%s</tr>`, clean(b.Version), b.OperatingSystem, clean(b.Architecture), b.Name)
 	rows := fmt.Sprintf(`
@@ -122,28 +134,36 @@ func (b Binary) Row() string {
     <td><span class="icon"><i class="fa fa-copy"></i></span><span title="copy to clipboard"><a class="copy" href="https://%s">  %s</a></span></td>`, b.Version, b.OperatingSystem, b.Architecture, b.downloadLink(), b.Name, b.downloadLink(), b.downloadLink())
 	return fmt.Sprintf(tr, rows)
 }
+
 func (b Binary) downloadLink() string {
 	return fmt.Sprintf("dl.k8s.io/%s/bin/%s/%s/%s", b.Version, b.OperatingSystem, b.Architecture, b.Name)
 }
 
-func (b Binary) version() version {
-	items := strings.Split(b.Version[1:], ".")
-	major, _ := strconv.Atoi(items[0])
-	minor, _ := strconv.Atoi(items[1])
-	patch, _ := strconv.Atoi(items[2])
-	return version{major, minor, patch}
+func (b Binary) version() (semver.Version, error) {
+	tag, err := util.TagStringToSemver(b.Version)
+	if err != nil {
+		return semver.Version{}, errors.Wrapf(err, "parse tag %s", b.Version)
+	}
+
+	return tag, nil
 }
 
 type versions []string
 
 func (v versions) Len() int { return len(v) }
+
 func (v versions) Less(i, j int) bool {
-	items := strings.Split(v[i][1:], ".")
-	iminor, _ := strconv.Atoi(items[1])
-	items = strings.Split(v[j][1:], ".")
-	jminor, _ := strconv.Atoi(items[1])
-	return iminor > jminor
+	tagI, err := util.TagStringToSemver(v[i])
+	if err != nil {
+		return false
+	}
+	tagJ, err := util.TagStringToSemver(v[j])
+	if err != nil {
+		return false
+	}
+	return tagI.Minor > tagJ.Minor
 }
+
 func (v versions) Swap(i, j int) { v[i], v[j] = v[j], v[i] }
 
 type arguments struct {
@@ -193,6 +213,7 @@ func main() {
 		}
 		stableVersions = append(stableVersions, strings.TrimSpace(string(out)))
 	}
+
 	sort.Sort(versions(stableVersions))
 	binaries := []Binary{}
 	for _, version := range stableVersions[:numberOfVersions] {
