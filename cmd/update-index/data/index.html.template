@@ -78,7 +78,26 @@
                 </tr>
             </thead>
             <tbody>
-{{range .Binaries}}{{.Row}}{{end}}
+            {{- range .Binaries }}
+                <tr class="{{.Version | clean}} {{.OperatingSystem}} {{.Architecture | clean}} {{.Name}}">
+                    <td>{{.Version}}</td>
+                    <td>{{.OperatingSystem}}</td>
+                    <td>{{.Architecture}}</td>
+                    <td>
+                        <span title="download">
+                            <a href="https://{{.Link}}">{{.Name}}</a>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="icon">
+                            <i class="fa fa-copy"></i>
+                        </span>
+                        <span title="copy to clipboard">
+                            <a class="copy" href="https://{{.Link}}">{{.Link}}</a>
+                        </span>
+                    </td>
+                </tr>
+            {{- end }}
             </tbody>
         </table>
     </section>
