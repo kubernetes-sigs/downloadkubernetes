@@ -124,18 +124,7 @@ func (b Binary) String() string {
 	return fmt.Sprintf("%s %s %s %s", b.Name, b.Version, b.OperatingSystem, b.Architecture)
 }
 
-func (b Binary) Row() string {
-	tr := fmt.Sprintf(`<tr class="%s %s %s %s">%%s</tr>`, clean(b.Version), b.OperatingSystem, clean(b.Architecture), b.Name)
-	rows := fmt.Sprintf(`
-	<td>%s</td>
-	<td>%s</td>
-	<td>%s</td>
-    <td><span title="download"><a href="https://%s">%s</a></span></td>
-    <td><span class="icon"><i class="fa fa-copy"></i></span><span title="copy to clipboard"><a class="copy" href="https://%s">  %s</a></span></td>`, b.Version, b.OperatingSystem, b.Architecture, b.downloadLink(), b.Name, b.downloadLink(), b.downloadLink())
-	return fmt.Sprintf(tr, rows)
-}
-
-func (b Binary) downloadLink() string {
+func (b Binary) Link() string {
 	return fmt.Sprintf("dl.k8s.io/%s/bin/%s/%s/%s", b.Version, b.OperatingSystem, b.Architecture, b.Name)
 }
 
