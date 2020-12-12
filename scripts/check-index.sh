@@ -24,37 +24,40 @@ LASTRELEASES=3
 COUNTER=0
 RELEASES=()
 INDEXFILE=dist/index.html
-EXITSTATUS=0
 
 LATEST=$(curl -Ls https://dl.k8s.io/release/stable.txt)
-LATESTMAJOR=`echo $LATEST | cut -dv -d. -f1`
-LATESTMINOR=`echo $LATEST | cut -d. -f2`
-RELEASES+=($LATEST)
+LATESTMAJOR=$(echo "$LATEST" | cut -dv -d. -f1)
+LATESTMINOR=$(echo "$LATEST" | cut -d. -f2)
+RELEASES+=("$LATEST")
 
 function check_index {
   status=()
   for tag in "${RELEASES[@]}"; do
-    result=`grep -Rq "$tag" "$INDEXFILE" >/dev/null; echo $?`
-    if [ $result -eq 1 ]; then
+    result=$(grep -Rq "$tag" "$INDEXFILE" >/dev/null; echo $?)
+    if [ "$result" -eq 1 ]; then
       echo "$tag not found in the index.html, please update the index.html file"
-      status+=1
+      (( status++ ))
     fi
   done
 
-  if [[ " ${status[@]} " =~ 1 ]]; then
-    return 1
-  fi
+  for value in "${status[@]}"
+  do
+    if [[ "$value" -ge 1 ]]; then
+      exit 1
+    fi
+  done
+
 }
 
 function get_kubernetes_releases {
   echo "Getting Kubernetes releases"
   while [  $COUNTER -lt $LASTRELEASES ]; do
-    let "LATESTMINOR-=1"
-    TEMP=$(curl -Ls https://dl.k8s.io/release/stable-${LATESTMAJOR:1}.$LATESTMINOR.txt)
+    (( LATESTMINOR-- ))
+    TEMP=$(curl -Ls https://dl.k8s.io/release/stable-"${LATESTMAJOR:1}"."$LATESTMINOR".txt)
     RELEASES+=("$TEMP")
-    let COUNTER+=1
+    (( COUNTER++ ))
   done
-  echo "Will validate the index.html using the following releases: ${RELEASES[@]}"
+  echo "Will validate the index.html using the following releases: " "${RELEASES[@]}"
 }
 
 get_kubernetes_releases || exit 1

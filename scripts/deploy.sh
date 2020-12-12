@@ -17,7 +17,7 @@
 set -o xtrace
 HOSTNAME=ubuntu-s-1vcpu-1gb-nyc3-01
 
-if [[ "$(hostname)" == $HOSTNAME ]]; then
+if [[ "$(hostname)" == "$HOSTNAME" ]]; then
     service downloadkubernetes restart
     exit $?
 fi

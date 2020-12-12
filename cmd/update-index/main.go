@@ -165,7 +165,10 @@ func main() {
 	fs := flag.NewFlagSet("arguments", flag.ExitOnError)
 	fs.StringVar(&args.templateFile, "index-template", "./cmd/update-index/data/index.html.template", "path to the index.html template file")
 	fs.StringVar(&args.outputFile, "index-output", "./dist/index.html", "the location of the file this program writes")
-	fs.Parse(os.Args[1:])
+	err := fs.Parse(os.Args[1:])
+	if err != nil {
+		log.Fatalf("Failed to parsing the flags: %v", err)
+	}
 
 	re := regexp.MustCompile(`release/(v\d+\.\d+\.\d+)/bin/([a-zA-Z]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-\.]+)`)
 
@@ -261,25 +264,33 @@ func main() {
 	}); err != nil {
 		panic(err)
 	}
-	ioutil.WriteFile(args.outputFile, buf.Bytes(), os.FileMode(0644))
+
+	err = ioutil.WriteFile(args.outputFile, buf.Bytes(), os.FileMode(0644))
+	if err != nil {
+		panic(err)
+	}
 }
 
 func shouldInclude(path string) bool {
 	if strings.HasSuffix(path, ".exe") {
 		return true
 	}
+
 	if strings.Contains(path, ".") {
 		return false
 	}
+
 	return true
 }
 
 func clean(item string) string {
-	if strings.Index(item, ".") != -1 {
+	if strings.Contains(item, ".") {
 		return strings.ReplaceAll(item, ".", "-")
 	}
+
 	if item[0] < 'a' {
 		return "a-" + item
 	}
+
 	return item
 }
