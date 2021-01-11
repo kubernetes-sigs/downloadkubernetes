@@ -39,7 +39,7 @@ import (
 )
 
 const (
-	numberOfVersions = 5
+	numberOfVersions = 4
 )
 
 type Binary struct {

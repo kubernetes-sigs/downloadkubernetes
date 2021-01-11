@@ -19,8 +19,8 @@ set -o nounset
 set -o pipefail
 
 # Get the past 4 Kubernetes releases not counting the latest available
-# example: 1.19 (latest), 4 last releases: 1.18, 1.17, 1.16, 1.15
-LASTRELEASES=4
+# example: 1.20 (latest), 3 last releases: 1.19, 1.18, 1.17
+LASTRELEASES=3
 COUNTER=0
 RELEASES=()
 INDEXFILE=dist/index.html
