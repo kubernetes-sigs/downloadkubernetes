@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Copyright 2020 The Kubernetes Authors.
+# Copyright 2021 The Kubernetes Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,5 +15,19 @@
 # limitations under the License.
 
 set -o errexit
+set -o nounset
+set -o pipefail
 
-docker push "chuckdha/downloadkubernetes-frontend:latest"
+VERSION=v0.2.0
+URL_BASE=https://raw.githubusercontent.com/kubernetes/repo-infra
+URL=$URL_BASE/$VERSION/hack/verify_boilerplate.py
+BIN_DIR=bin
+SCRIPT=$BIN_DIR/verify_boilerplate.py
+
+if [[ ! -f $SCRIPT ]]; then
+    mkdir -p $BIN_DIR
+    curl -sfL $URL -o $SCRIPT
+    chmod +x $SCRIPT
+fi
+
+$SCRIPT --boilerplate-dir hack/boilerplate --skip dist

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Copyright 2020 The Kubernetes Authors.
+# Copyright 2021 The Kubernetes Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,7 +15,23 @@
 # limitations under the License.
 
 set -o errexit
+set -o nounset
+set -o pipefail
 
-npm run build-prod
+VERSION=v1.35.2
+URL_BASE=https://raw.githubusercontent.com/golangci/golangci-lint
+URL=$URL_BASE/$VERSION/install.sh
 
-docker build -t "chuckdha/downloadkubernetes-frontend:latest" --file frontend.Dockerfile .
+if [[ ! -f .golangci.yml ]]; then
+    echo 'ERROR: missing .golangci.yml in repo root' >&2
+    exit 1
+fi
+
+if ! command -v golangci-lint; then
+    curl -sfL $URL | sh -s $VERSION
+    PATH=$PATH:bin
+fi
+
+golangci-lint version
+golangci-lint linters
+golangci-lint run "$@"
