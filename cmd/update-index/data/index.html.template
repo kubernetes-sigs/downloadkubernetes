@@ -39,31 +39,36 @@
         </div>
     </section>
 
-
     <section class="section">
         <nav class="level">
             <div class="level-item has-text-centered">
                 <div>
                     <p class="heading">Operating Systems</p>
                     <div class="buttons has-addons" id="os">
-                        {{range .AllOSes }}<span class="button" data-os="{{.}}">{{.}}</span>
-                    {{end}}</div>
+                        {{- range .AllOSes }}
+                        <span class="button" data-os="{{.}}">{{.}}</span>
+                        {{- end }}
+                    </div>
                 </div>
             </div>
             <div class="level-item has-text-centered">
                 <div>
                     <p class="heading">Architectures</p>
                     <div class="buttons has-addons" id="arch">
-                        {{range .AllArch}}<span class="button" data-arch="{{clean .}}">{{.}}</span>
-                    {{end}}</div>
+                        {{- range .AllArch }}
+                        <span class="button" data-arch="{{clean .}}">{{.}}</span>
+                        {{- end }}
+                    </div>
                 </div>
             </div>
             <div class="level-item has-text-centered">
                 <div>
                     <p class="heading">Stable Versions</p>
                     <div class="buttons has-addons" id="version">
-                        {{range .AllVersions}}<span class="button" data-version="{{clean .}}">{{.}}</span>
-                    {{end}}</div>
+                        {{- range .AllVersions }}
+                        <span class="button" data-version="{{clean .}}">{{.}}</span>
+                        {{- end }}
+                    </div>
                 </div>
             </div>
         </nav>
