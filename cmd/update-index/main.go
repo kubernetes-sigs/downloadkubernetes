@@ -246,6 +246,8 @@ func main() {
 	// sort those bins
 	bins := Binaries(binaries).AllBins()
 	sort.Strings(bins)
+	oses := Binaries(binaries).AllOSes()
+	sort.Strings(oses)
 	arch := Binaries(binaries).AllArch()
 	sort.Strings(arch)
 
@@ -257,7 +259,7 @@ func main() {
 		AllArch     []string
 	}{
 		Binaries:    binaries,
-		AllOSes:     Binaries(binaries).AllOSes(),
+		AllOSes:     oses,
 		AllBins:     bins,
 		AllVersions: stableVersions[:numberOfVersions],
 		AllArch:     arch,
