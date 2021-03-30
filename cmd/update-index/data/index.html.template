@@ -99,6 +99,7 @@
                         </span>
                         <span title="copy to clipboard">
                             <a class="copy" href="https://{{.Link}}">{{.Link}}</a>
+                            (<a class="copy" href="https://{{.Link}}.sha256">checksum</a>)
                         </span>
                     </td>
                 </tr>
