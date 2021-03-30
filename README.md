@@ -9,11 +9,7 @@
 ## Architecture
 
 The published artifacts are static HTML/CSS/JavaScript files. They are updated offline by the `update-index` command and
-then published to the web via docker.
-
-The docker image has an nginx in it to serve static files.
-
-Assumed HTTPS is terminated at the ingress level before reaching the docker image.
+then published to the web via [Netlify].
 
 ## Community, discussion, contribution, and support
 
@@ -30,3 +26,4 @@ Participation in the Kubernetes community is governed by the [Kubernetes Code of
 
 [owners]: https://git.k8s.io/community/contributors/guide/owners.md
 [Creative Commons 4.0]: https://git.k8s.io/website/LICENSE
+[Netlify]: https://netlify.com/
