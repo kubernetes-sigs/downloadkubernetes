@@ -48,22 +48,6 @@ verify-index: ## Checks if the index.html is up-to-date
 update-index: ## update the index.html with the latests K8s releases
 	$(GO) run ./cmd/update-index/ -index-template ./cmd/update-index/data/index.html.template -index-output ./dist/index.html
 
-
-##@ Images
-
-RUNTIME ?= docker
-DL_K8S_IMAGE ?= "chuckdha/downloadkubernetes-frontend"
-DL_K8S_TAG ?= "latest"
-
-.PHONY: build-image
-build-image: ## build downloadkubernetes image
-	npm run build-prod
-	$(RUNTIME) build -t $(DL_K8S_IMAGE):$(DL_K8S_TAG) --file frontend.Dockerfile .
-
-.PHONY: push-image
-push-image: ## push downloadkubernetes image
-	$(RUNTIME) push $(DL_K8S_IMAGE):$(DL_K8S_TAG)
-
 ##@ Helpers
 
 .PHONY: help
