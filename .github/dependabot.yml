@@ -1,0 +1,18 @@
+version: 2
+updates:
+- package-ecosystem: gomod
+  directory: "/"
+  schedule:
+    interval: daily
+  labels:
+    - "area/dependency"
+    - "release-note-none"
+  open-pull-requests-limit: 10
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  labels:
+    - "area/dependency"
+    - "release-note-none"
+  open-pull-requests-limit: 10
