@@ -14,7 +14,7 @@
   "license": "ISC",
   "devDependencies": {
     "bulma": "^0.9.3",
-    "css-loader": "^5.2.7",
+    "css-loader": "^6.0.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "mini-css-extract-plugin": "^2.1.0",
     "node-sass": "^6.0.1",
