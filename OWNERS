@@ -1,10 +1,11 @@
 # See the OWNERS docs at https://go.k8s.io/owners
 
 approvers:
-  - justaugustus
-  - tpepper
-  - alejandrox1
-  - saschagrunert
-  - chuckha
-  - mauilion
-reviewers: []
+  - sig-release-leads
+  - release-engineering-approvers
+reviewers:
+  - release-engineering-approvers
+  - release-engineering-reviewers
+labels:
+  - sig/release
+  - area/release-eng
