@@ -1,0 +1,41 @@
+name: Update Index
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 10 * * *'
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-go@v2
+        with:
+          go-version: '1.17.x'
+
+      - name: Update index
+        run: make update-index
+
+      - name: Check workspace
+        id: create_pr
+        run: |
+          if [[ $(git diff --stat) != '' ]]; then
+            echo ::set-output name=create_pr::true
+          fi
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3.11.0
+        if: ${{ steps.create_pr.outputs.create_pr == 'true' }}
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: update index
+          title: 'Update index'
+          body: >
+            Update index
+          labels: feature, automated pr
+          branch-suffix: timestamp
+          branch: update-index
+          delete-branch: true
