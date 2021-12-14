@@ -33,10 +33,10 @@ RELEASES+=("$LATEST")
 function check_index {
   status=()
   for tag in "${RELEASES[@]}"; do
-    result=$(grep -Rq "$tag" "$INDEXFILE" >/dev/null; echo $?)
-    if [ "$result" -eq 1 ]; then
+    result=$(grep "$tag" "$INDEXFILE" >/dev/null; echo $?)
+    if [ "$result" -ge 1 ]; then
       echo "$tag not found in the index.html, please update the index.html file"
-      (( status++ ))
+      status[${#status[@]}]=$result
     fi
   done
 
@@ -46,7 +46,7 @@ function check_index {
       exit 1
     fi
   done
-
+  echo "$INDEXFILE is up-to-date"
 }
 
 function get_kubernetes_releases {
