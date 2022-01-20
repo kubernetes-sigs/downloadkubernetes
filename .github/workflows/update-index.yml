@@ -35,7 +35,7 @@ jobs:
           title: 'Update index'
           body: >
             Update index
-          labels: feature, automated pr
+          labels: ok-to-test, feature, automated pr
           branch-suffix: timestamp
           branch: update-index
           delete-branch: true
