@@ -7,5 +7,5 @@ require (
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/pkg/errors v0.9.1
 	google.golang.org/api v0.65.0
-	sigs.k8s.io/release-utils v0.3.0
+	sigs.k8s.io/release-utils v0.4.0
 )
