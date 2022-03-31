@@ -7,6 +7,6 @@ require (
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/pkg/errors v0.9.1
-	google.golang.org/api v0.73.0
+	google.golang.org/api v0.74.0
 	sigs.k8s.io/release-utils v0.6.0
 )
