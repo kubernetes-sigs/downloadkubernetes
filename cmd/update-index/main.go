@@ -266,7 +266,7 @@ func main() {
 		panic(err)
 	}
 
-	err = ioutil.WriteFile(args.outputFile, buf.Bytes(), os.FileMode(0644))
+	err = ioutil.WriteFile(args.outputFile, buf.Bytes(), os.FileMode(0o644)) // nolint: gocritic
 	if err != nil {
 		panic(err)
 	}
