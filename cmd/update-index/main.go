@@ -31,7 +31,6 @@ import (
 
 	"cloud.google.com/go/storage"
 	"github.com/blang/semver"
-	"github.com/pkg/errors"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"sigs.k8s.io/release-utils/util"
@@ -130,7 +129,7 @@ func (b Binary) Link() string {
 func (b Binary) version() (semver.Version, error) {
 	tag, err := util.TagStringToSemver(b.Version)
 	if err != nil {
-		return semver.Version{}, errors.Wrapf(err, "parse tag %s", b.Version)
+		return semver.Version{}, fmt.Errorf("parse tag %s: %w", b.Version, err)
 	}
 
 	return tag, nil
