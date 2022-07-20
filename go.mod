@@ -5,7 +5,7 @@ go 1.18
 require (
 	cloud.google.com/go/storage v1.23.0
 	github.com/blang/semver v3.5.1+incompatible
-	google.golang.org/api v0.87.0
+	google.golang.org/api v0.88.0
 	sigs.k8s.io/release-utils v0.7.1
 )
 
