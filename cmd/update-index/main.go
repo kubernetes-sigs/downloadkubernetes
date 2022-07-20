@@ -30,7 +30,7 @@ import (
 	"text/template"
 
 	"cloud.google.com/go/storage"
-	"github.com/blang/semver"
+	"github.com/blang/semver/v4"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"sigs.k8s.io/release-utils/util"
