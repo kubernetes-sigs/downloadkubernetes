@@ -17,7 +17,7 @@
     "css-loader": "^6.2.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "mini-css-extract-plugin": "^2.2.0",
-    "node-sass": "^7.0.0",
+    "node-sass": "^8.0.0",
     "sass-loader": "^13.0.0",
     "style-loader": "^3.2.1",
     "webpack": "^5.51.1",
