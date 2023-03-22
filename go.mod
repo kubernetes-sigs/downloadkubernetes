@@ -3,7 +3,7 @@ module sigs.k8s.io/downloadkubernetes
 go 1.18
 
 require (
-	cloud.google.com/go/storage v1.30.0
+	cloud.google.com/go/storage v1.30.1
 	github.com/blang/semver/v4 v4.0.0
 	google.golang.org/api v0.114.0
 	sigs.k8s.io/release-utils v0.7.3
@@ -28,7 +28,7 @@ require (
 	golang.org/x/text v0.8.0 // indirect
 	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
-	google.golang.org/genproto v0.0.0-20230306155012-7f2fa6fef1f4 // indirect
+	google.golang.org/genproto v0.0.0-20230320184635-7606e756e683 // indirect
 	google.golang.org/grpc v1.53.0 // indirect
 	google.golang.org/protobuf v1.29.1 // indirect
 )
