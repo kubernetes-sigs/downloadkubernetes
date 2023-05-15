@@ -28,6 +28,7 @@ import (
 	"sort"
 	"strings"
 	"text/template"
+	"time"
 
 	"cloud.google.com/go/storage"
 	"github.com/blang/semver/v4"
@@ -255,12 +256,14 @@ func main() {
 		AllBins     []string
 		AllVersions []string
 		AllArch     []string
+		Year        int
 	}{
 		Binaries:    binaries,
 		AllOSes:     oses,
 		AllBins:     bins,
 		AllVersions: stableVersions[:numberOfVersions],
 		AllArch:     arch,
+		Year:        time.Now().Year(),
 	}); err != nil {
 		panic(err)
 	}

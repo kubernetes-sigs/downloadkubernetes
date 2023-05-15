@@ -107,6 +107,69 @@
             </tbody>
         </table>
     </section>
+    <footer class="footer has-background-primary">
+        <div class="columns">
+            <div class="column is-3 is-flex is-justify-content-center">
+                <ul class="is-inline is-marginless">
+                    <li class="is-inline-block mx-2 is-size-3" data-tooltip="User mailing list" aria-label="User mailing list">
+                        <a class="has-text-white" target="_blank" href="https://discuss.kubernetes.io">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </li>
+                    <li class="is-inline-block mx-2 is-size-3" data-tooltip="Twitter" aria-label="Twitter">
+                        <a class="has-text-white" target="_blank" href="https://twitter.com/kubernetesio">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="is-inline-block mx-2 is-size-3" data-tooltip="Calendar" aria-label="Calendar">
+                        <a class="has-text-white" target="_blank" href="https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io">
+                            <i class="fas fa-calendar-alt"></i>
+                        </a>
+                    </li>
+                    <li class="is-inline-block mx-2 is-size-3" data-tooltip="Youtube" aria-label="Youtube">
+                        <a class="has-text-white" target="_blank" href="https://youtube.com/kubernetescommunity">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column is-6">
+                <div class="has-text-centered">
+                <small class="has-text-white is-inline-block">© {{.Year}} The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="has-text-white">CC BY 4.0</a></small>
+                </br>
+                <small class="has-text-white">Copyright © {{.Year}} The Linux Foundation ®. All
+                    rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of
+                    trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="has-text-white">Trademark Usage page</a></small>
+                <br>
+                <small class="has-text-white">ICP license: 京ICP备17074266号-3</small>
+                </div>
+            </div>
+            <div class="column is-3 has-text-right has-text-centered-mobile is-flex-sm justify-content-sm-end">
+                <ul class="is-inline is-marginless">
+                    <li class="is-inline-block mx-2 is-size-3" data-tooltip="GitHub" aria-label="GitHub">
+                        <a class="has-text-white" target="_blank" href="https://github.com/kubernetes/kubernetes">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                    <li class="is-inline-block mx-2 is-size-3" data-tooltip="Slack" aria-label="Slack">
+                        <a class="has-text-white" target="_blank" href="https://slack.k8s.io">
+                            <i class="fab fa-slack"></i>
+                        </a>
+                    </li>
+                    <li class="is-inline-block mx-2 is-size-3" data-tooltip="Contribute" aria-label="Contribute">
+                        <a class="has-text-white" target="_blank" href="https://git.k8s.io/community/contributors/guide">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    </li>
+                    <li class="is-inline-block mx-2 is-size-3" data-tooltip="Stack Overflow" aria-label="Stack Overflow">
+                        <a class="has-text-white" target="_blank" href="https://stackoverflow.com/questions/tagged/kubernetes">
+                            <i class="fab fa-stack-overflow"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 </body>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142101933-1"></script>
