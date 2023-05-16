@@ -32,3 +32,12 @@ $primary: $kubernetes;
 .my-icon {
     padding: 2rem;
 }
+
+.table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; 
+}
+
+.table {
+    width: max-content;
+}

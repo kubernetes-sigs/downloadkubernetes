@@ -44,7 +44,7 @@
             <div class="level-item has-text-centered">
                 <div>
                     <p class="heading">Operating Systems</p>
-                    <div class="buttons has-addons" id="os">
+                    <div class="buttons has-addons is-centered" id="os">
                         {{- range .AllOSes }}
                         <span class="button" data-os="{{.}}">{{.}}</span>
                         {{- end }}
@@ -54,7 +54,7 @@
             <div class="level-item has-text-centered">
                 <div>
                     <p class="heading">Architectures</p>
-                    <div class="buttons has-addons" id="arch">
+                    <div class="buttons has-addons is-centered" id="arch">
                         {{- range .AllArch }}
                         <span class="button" data-arch="{{clean .}}">{{.}}</span>
                         {{- end }}
@@ -64,7 +64,7 @@
             <div class="level-item has-text-centered">
                 <div>
                     <p class="heading">Stable Versions</p>
-                    <div class="buttons has-addons" id="version">
+                    <div class="buttons has-addons is-centered" id="version">
                         {{- range .AllVersions }}
                         <span class="button" data-version="{{clean .}}">{{.}}</span>
                         {{- end }}
@@ -72,40 +72,42 @@
                 </div>
             </div>
         </nav>
-        <table class="table is-fullwidth">
-            <thead>
-                <tr>
-                    <th>Version</th>
-                    <th>Operating System</th>
-                    <th>Architecture</th>
-                    <th>Download Binary</th>
-                    <th>Copy Link</th>
-                </tr>
-            </thead>
-            <tbody>
-            {{- range .Binaries }}
-                <tr class="{{.Version | clean}} {{.OperatingSystem}} {{.Architecture | clean}} {{.Name}}">
-                    <td>{{.Version}}</td>
-                    <td>{{.OperatingSystem}}</td>
-                    <td>{{.Architecture}}</td>
-                    <td>
-                        <span title="download">
-                            <a href="https://{{.Link}}">{{.Name}}</a>
-                        </span>
-                    </td>
-                    <td>
-                        <span class="icon">
-                            <i class="fa fa-copy"></i>
-                        </span>
-                        <span title="copy to clipboard">
-                            <a class="copy" href="https://{{.Link}}">{{.Link}}</a>
-                            (<a class="copy" href="https://{{.Link}}.sha256">checksum</a>)
-                        </span>
-                    </td>
-                </tr>
-            {{- end }}
-            </tbody>
-        </table>
+        <div class="table-container">
+            <table class="table is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>Version</th>
+                        <th>Operating System</th>
+                        <th>Architecture</th>
+                        <th>Download Binary</th>
+                        <th>Copy Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{- range .Binaries }}
+                    <tr class="{{.Version | clean}} {{.OperatingSystem}} {{.Architecture | clean}} {{.Name}}">
+                        <td>{{.Version}}</td>
+                        <td>{{.OperatingSystem}}</td>
+                        <td>{{.Architecture}}</td>
+                        <td>
+                            <span title="download">
+                                <a href="https://{{.Link}}">{{.Name}}</a>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="icon">
+                                <i class="fa fa-copy"></i>
+                            </span>
+                            <span title="copy to clipboard">
+                                <a class="copy" href="https://{{.Link}}">{{.Link}}</a>
+                                (<a class="copy" href="https://{{.Link}}.sha256">checksum</a>)
+                            </span>
+                        </td>
+                    </tr>
+                {{- end }}
+                </tbody>
+            </table>
+        </div>
     </section>
     <footer class="footer has-background-primary">
         <div class="columns">
