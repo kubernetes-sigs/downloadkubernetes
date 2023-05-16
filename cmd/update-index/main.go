@@ -21,7 +21,7 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"os"
 	"regexp"
@@ -197,7 +197,7 @@ func main() {
 			fmt.Printf("%+v\n", err)
 			break
 		}
-		out, err := ioutil.ReadAll(reader)
+		out, err := io.ReadAll(reader)
 		if err != nil {
 			fmt.Printf("%+v\n", err)
 			break
@@ -268,7 +268,7 @@ func main() {
 		panic(err)
 	}
 
-	err = ioutil.WriteFile(args.outputFile, buf.Bytes(), os.FileMode(0o644)) // nolint: gocritic
+	err = os.WriteFile(args.outputFile, buf.Bytes(), os.FileMode(0o644)) // nolint: gocritic
 	if err != nil {
 		panic(err)
 	}
