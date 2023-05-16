@@ -1,12 +1,12 @@
 module sigs.k8s.io/downloadkubernetes
 
-go 1.18
+go 1.20
 
 require (
 	cloud.google.com/go/storage v1.30.1
 	github.com/blang/semver/v4 v4.0.0
 	google.golang.org/api v0.122.0
-	sigs.k8s.io/release-utils v0.7.3
+	sigs.k8s.io/release-utils v0.7.4
 )
 
 require (

@@ -8,13 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v2
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-go@v2
+      - uses: actions/setup-go@fac708d6674e30b6ba41289acaab6d4b75aa0753 # v4.0.1
         with:
-          go-version: '1.17.x'
+          go-version: '1.20'
+          check-latest: true
 
       - name: Update index
         run: make update-index
@@ -23,11 +24,11 @@ jobs:
         id: create_pr
         run: |
           if [[ $(git diff --stat) != '' ]]; then
-            echo ::set-output name=create_pr::true
+            echo "create_pr=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3.11.0
+        uses: peter-evans/create-pull-request@284f54f989303d2699d373481a0cfa13ad5a6666 # v5.0.1
         if: ${{ steps.create_pr.outputs.create_pr == 'true' }}
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
