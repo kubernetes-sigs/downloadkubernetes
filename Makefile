@@ -45,8 +45,8 @@ verify-index: ## Checks if the index.html is up-to-date
 
 .PHONY: update-index
 
-update-index: ## update the index.html with the latests K8s releases
-	$(GO) run ./cmd/update-index/ -index-template ./cmd/update-index/data/index.html.template -index-output ./dist/index.html
+update-index: ## update the index.html with the latests K8s releases and store binary details in json
+	$(GO) run ./cmd/update-index/ -index-template ./cmd/update-index/data/index.html.template -index-output ./dist/index.html -binary_details ./dist/release_binaries.json
 
 ##@ Helpers
 
