@@ -100,7 +100,7 @@
                             </span>
                             <span title="copy to clipboard">
                                 <a class="copy" href="https://{{.Link}}">{{.Link}}</a>
-                                (<a class="copy" href="https://{{.Link}}.sha256">checksum</a>)
+                                (<a class="copy" href="https://{{.Link}}.sha256">checksum</a> | <a class="copy" href="https://{{.Link}}.sig">signature</a> | <a class="copy" href="https://{{.Link}}.cert">certificate</a>)
                             </span>
                         </td>
                     </tr>
