@@ -19,6 +19,7 @@ package main
 import (
 	"bytes"
 	"context"
+	"encoding/json"
 	"flag"
 	"fmt"
 	"io"
@@ -157,6 +158,7 @@ func (v versions) Swap(i, j int) { v[i], v[j] = v[j], v[i] }
 type arguments struct {
 	templateFile string
 	outputFile   string
+	dataFile     string
 }
 
 func main() {
@@ -164,6 +166,7 @@ func main() {
 	fs := flag.NewFlagSet("arguments", flag.ExitOnError)
 	fs.StringVar(&args.templateFile, "index-template", "./cmd/update-index/data/index.html.template", "path to the index.html template file")
 	fs.StringVar(&args.outputFile, "index-output", "./dist/index.html", "the location of the file this program writes")
+	fs.StringVar(&args.dataFile, "binary_details", "./dist/release_binaries.json", "the location of the json file this program writes")
 	err := fs.Parse(os.Args[1:])
 	if err != nil {
 		log.Fatalf("Failed to parsing the flags: %v", err)
@@ -269,6 +272,29 @@ func main() {
 	}
 
 	err = os.WriteFile(args.outputFile, buf.Bytes(), os.FileMode(0o644)) // nolint: gocritic
+	if err != nil {
+		panic(err)
+	}
+
+	binaryDetails := struct {
+		Binaries    Binaries
+		AllOSes     []string
+		AllVersions []string
+		AllArch     []string
+	}{
+		Binaries:    binaries,
+		AllOSes:     oses,
+		AllVersions: stableVersions[:numberOfVersions],
+		AllArch:     arch,
+	}
+
+	// Store the binaryDetails data in a JSON file
+	jsonData, err := json.MarshalIndent(binaryDetails, "", "  ")
+	if err != nil {
+		panic(err)
+	}
+
+	err = os.WriteFile(args.dataFile, jsonData, os.FileMode(0o644))
 	if err != nil {
 		panic(err)
 	}
