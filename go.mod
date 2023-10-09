@@ -6,7 +6,7 @@ require (
 	cloud.google.com/go/storage v1.33.0
 	github.com/blang/semver/v4 v4.0.0
 	google.golang.org/api v0.145.0
-	sigs.k8s.io/release-utils v0.7.4
+	sigs.k8s.io/release-utils v0.7.5
 )
 
 require (
@@ -21,7 +21,7 @@ require (
 	github.com/google/uuid v1.3.1 // indirect
 	github.com/googleapis/enterprise-certificate-proxy v0.3.1 // indirect
 	github.com/googleapis/gax-go/v2 v2.12.0 // indirect
-	github.com/sirupsen/logrus v1.9.0 // indirect
+	github.com/sirupsen/logrus v1.9.3 // indirect
 	go.opencensus.io v0.24.0 // indirect
 	golang.org/x/crypto v0.13.0 // indirect
 	golang.org/x/net v0.15.0 // indirect
