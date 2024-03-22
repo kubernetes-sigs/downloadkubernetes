@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "bulma": "^0.9.3",
+    "bulma": "^1.0.0",
     "css-loader": "^6.2.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "mini-css-extract-plugin": "^2.2.0",
