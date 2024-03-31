@@ -25,18 +25,15 @@ GO ?= go
 
 ##@ Verify
 
-.PHONY: verify verify-boilerplate verify-dependencies verify-golangci-lint verify-go-mod
+.PHONY: verify verify-boilerplate verify-dependencies verify-go-mod
 
-verify: verify-boilerplate verify-golangci-lint verify-go-mod ## Runs verification scripts to ensure correct execution
+verify: verify-boilerplate verify-go-mod ## Runs verification scripts to ensure correct execution
 
 verify-boilerplate: ## Runs the file header check
 	./hack/verify-boilerplate.sh
 
 verify-go-mod: ## Runs the go module linter
 	./hack/verify-go-mod.sh
-
-verify-golangci-lint: ## Runs all golang linters
-	./hack/verify-golangci-lint.sh
 
 verify-index: ## Checks if the index.html is up-to-date
 	./scripts/check-index.sh

@@ -1,11 +1,16 @@
 name: Update Index
+
 on:
   workflow_dispatch:
   schedule:
     - cron: '0 10 * * *'
+
 jobs:
   create-pull-request:
     runs-on: ubuntu-latest
+
+    if: github.repository == 'kubernetes-sigs/downloadkubernetes'
+
     steps:
       - name: Check out repository code
         uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
