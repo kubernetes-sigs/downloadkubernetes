@@ -16,10 +16,42 @@ limitations under the License.
 
 @charset "utf-8";
 
+@import "~bulma/bulma";
+
 $kubernetes: hsl(219, 76%, 55%);
 $primary: $kubernetes;
 
-@import "~bulma/bulma";
+.hero.is-primary {
+    background-color: $kubernetes;
+}
+
+.title {
+    color: #fff;
+}
+
+.subtitle {
+    color: #fff;
+}
+
+.button.is-success {
+    background-color: $kubernetes;
+    color: #fff;
+}
+
+.span.button.is-success {
+    background-color: $kubernetes;
+    color: #fff;
+}
+
+.footer {
+    background-color: $kubernetes;
+    color: #fff;
+}
+
+.is-success {
+    background-color: $kubernetes;
+    color: #fff;
+}
 
 .figure-center {
     margin: auto;
@@ -35,7 +67,7 @@ $primary: $kubernetes;
 
 .table-container {
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch; 
+    -webkit-overflow-scrolling: touch;
 }
 
 .table {

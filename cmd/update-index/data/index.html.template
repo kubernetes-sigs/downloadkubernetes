@@ -109,7 +109,7 @@
             </table>
         </div>
     </section>
-    <footer class="footer has-background-primary">
+    <footer class="footer">
         <div class="columns">
             <div class="column is-3 is-flex is-justify-content-center">
                 <ul class="is-inline is-marginless">
