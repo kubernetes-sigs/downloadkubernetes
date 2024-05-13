@@ -5,7 +5,7 @@ go 1.22
 require (
 	cloud.google.com/go/storage v1.40.0
 	github.com/blang/semver/v4 v4.0.0
-	google.golang.org/api v0.179.0
+	google.golang.org/api v0.180.0
 	sigs.k8s.io/release-utils v0.8.2
 )
 
