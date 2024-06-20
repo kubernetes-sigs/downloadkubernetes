@@ -16,7 +16,7 @@ limitations under the License.
 
 @charset "utf-8";
 
-@import "~bulma/bulma";
+@import 'bulma/css/bulma.css';
 
 $kubernetes: hsl(219, 76%, 55%);
 $primary: $kubernetes;
