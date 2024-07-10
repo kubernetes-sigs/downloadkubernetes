@@ -1,7 +1,7 @@
 ---
 run:
   concurrency: 6
-  deadline: 5m
+  timeout: 15m
 issues:
   exclude-rules:
     # counterfeiter fakes are usually named 'fake_<something>.go'
@@ -12,38 +12,119 @@ issues:
 linters:
   disable-all: true
   enable:
+    - asasalint
     - asciicheck
+    - bidichk
     - bodyclose
+    - canonicalheader
+    - containedctx
+    - contextcheck
+    - copyloopvar
+    - decorder
     - dogsled
     - dupl
+    - dupword
+    - durationcheck
     - errcheck
+    - errchkjson
+    - errname
+    - exhaustive
+    - exportloopref
+    - fatcontext
+    - forcetypeassert
+    - gci
+    - ginkgolinter
+    - gocheckcompilerdirectives
+    - gochecknoglobals
+    - gochecknoinits
+    - gochecksumtype
+    - gocognit
     - goconst
     - gocritic
     - gocyclo
+    - godot
     - godox
     - gofmt
     - gofumpt
     - goheader
     - goimports
+    - gomoddirectives
     - gomodguard
     - goprintffuncname
+    - gosec
     - gosimple
+    - gosmopolitan
     - govet
+    - grouper
+    - importas
+    - inamedparam
     - ineffassign
+    - interfacebloat
+    - intrange
+    - ireturn
+    - loggercheck
+    - maintidx
+    - makezero
+    - mirror
     - misspell
     - nakedret
+    - nestif
+    - nilerr
+    - nilnil
+    - noctx
+    - nolintlint
+    - nonamedreturns
+    - nosprintfhostport
+    - paralleltest
+    - perfsprint
     - prealloc
+    - predeclared
+    - promlinter
+    - protogetter
+    - reassign
     - revive
     - rowserrcheck
+    - sloglint
+    - spancheck
     - sqlclosecheck
     - staticcheck
     - stylecheck
+    - tagalign
+    - tagliatelle
+    - tenv
+    - testableexamples
+    - testifylint
+    - testpackage
+    - thelper
+    - tparallel
     - typecheck
     - unconvert
     - unparam
     - unused
+    - usestdlibvars
+    - wastedassign
     - whitespace
+    - wrapcheck
+    - zerologlint
+    # - cyclop
+    # - depguard
+    # - err113
+    # - errorlint
+    # - exhaustruct
+    # - forbidigo
+    # - funlen
+    # - lll
+    # - mnd
+    # - musttag
+    # - nlreturn
+    # - varnamelen
+    # - wsl
 linters-settings:
+  gci:
+    sections:
+      - standard
+      - default
+      - localmodule
   godox:
     keywords:
       - BUG
@@ -53,43 +134,4 @@ linters-settings:
     check-type-assertions: true
     check-blank: true
   gocritic:
-    enabled-checks:
-      # Diagnostic
-      - commentedOutCode
-      - nilValReturn
-      - sloppyReassign
-      - weakCond
-      - octalLiteral
-
-      # Performance
-      - appendCombine
-      - equalFold
-      - hugeParam
-      - indexAlloc
-      - rangeExprCopy
-      - rangeValCopy
-
-      # Style
-      - boolExprSimplify
-      - commentedOutImport
-      - docStub
-      - emptyFallthrough
-      - emptyStringTest
-      - hexLiteral
-      - methodExprCall
-      - stringXbytes
-      - typeAssertChain
-      - unlabelStmt
-      - yodaStyleExpr
-      # - ifElseChain
-
-      # Opinionated
-      - builtinShadow
-      - importShadow
-      - initClause
-      - nestingReduce
-      - paramTypeCombine
-      - ptrToRefParam
-      - typeUnparen
-      - unnamedResult
-      - unnecessaryBlock
+    enable-all: true
