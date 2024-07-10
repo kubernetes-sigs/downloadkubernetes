@@ -271,7 +271,7 @@ func main() {
 		panic(err)
 	}
 
-	err = os.WriteFile(args.outputFile, buf.Bytes(), os.FileMode(0o644)) // nolint: gocritic
+	err = os.WriteFile(args.outputFile, buf.Bytes(), os.FileMode(0o644)) //nolint:gocritic
 	if err != nil {
 		panic(err)
 	}
