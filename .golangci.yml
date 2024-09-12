@@ -29,7 +29,6 @@ linters:
     - errchkjson
     - errname
     - exhaustive
-    - exportloopref
     - fatcontext
     - forcetypeassert
     - gci
