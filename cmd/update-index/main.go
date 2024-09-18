@@ -40,6 +40,7 @@ import (
 
 const (
 	numberOfVersions = 4
+	defaultTimeout   = 10 * time.Minute
 )
 
 type Binary struct {
@@ -174,13 +175,16 @@ func main() {
 
 	re := regexp.MustCompile(`release/(v\d+\.\d+\.\d+)/bin/([a-zA-Z]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-\.]+)`)
 
-	client, err := storage.NewClient(context.Background(), option.WithoutAuthentication())
+	ctx, cancel := context.WithTimeout(context.Background(), defaultTimeout)
+	defer cancel()
+
+	client, err := storage.NewClient(ctx, option.WithoutAuthentication())
 	if err != nil {
-		log.Fatalf("Failed to create client: %v", err)
+		log.Fatalf("Failed to create client: %v", err) //nolint:gocritic // no need to cancel the context here
 	}
 
 	bh := client.Bucket("kubernetes-release")
-	oi := bh.Objects(context.Background(), &storage.Query{Prefix: "release/stable-"})
+	oi := bh.Objects(ctx, &storage.Query{Prefix: "release/stable-"})
 	stableVersions := []string{}
 	for {
 		attr, err := oi.Next()
@@ -195,7 +199,7 @@ func main() {
 			continue
 		}
 		oh := bh.Object(attr.Name)
-		reader, err := oh.NewReader(context.Background())
+		reader, err := oh.NewReader(ctx)
 		if err != nil {
 			fmt.Printf("%+v\n", err)
 			break
@@ -212,7 +216,7 @@ func main() {
 	binaries := []Binary{}
 	for _, version := range stableVersions[:numberOfVersions] {
 		query := &storage.Query{Prefix: fmt.Sprintf("release/%s/bin", version)}
-		oi := bh.Objects(context.Background(), query)
+		oi := bh.Objects(ctx, query)
 		for {
 			attr, err := oi.Next()
 			if err == iterator.Done {
