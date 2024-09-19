@@ -20,6 +20,7 @@ import (
 	"bufio"
 	"bytes"
 	"encoding/json"
+	"errors"
 	"flag"
 	"fmt"
 	"html/template"
@@ -39,6 +40,8 @@ const (
 	numberOfVersions = 4
 	baseURL          = release.ProductionBucketURL + "/release"
 )
+
+var errMajorVersion = errors.New("assuming that latest stable major version is 1")
 
 type Binary struct {
 	Version         string
@@ -163,7 +166,7 @@ func run() error {
 
 	err := fs.Parse(os.Args[1:])
 	if err != nil {
-		return fmt.Errorf("failed to parsing the flags: %v", err)
+		return fmt.Errorf("failed to parsing the flags: %w", err)
 	}
 
 	agent := http.NewAgent()
@@ -181,7 +184,7 @@ func run() error {
 	}
 
 	if latestStableSemver.Major != 1 {
-		return fmt.Errorf("assuming that latest stable major version is 1, but it's %d", latestStableSemver.Major)
+		return fmt.Errorf("%w, but it's %d", errMajorVersion, latestStableSemver.Major)
 	}
 
 	stableVersions := []string{string(latestStable)}
