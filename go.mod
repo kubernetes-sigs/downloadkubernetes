@@ -30,7 +30,7 @@ require (
 	github.com/Azure/go-autorest/logger v0.2.1 // indirect
 	github.com/Azure/go-autorest/tracing v0.6.0 // indirect
 	github.com/MakeNowJust/heredoc/v2 v2.0.1 // indirect
-	github.com/Microsoft/go-winio v0.6.1 // indirect
+	github.com/Microsoft/go-winio v0.6.2 // indirect
 	github.com/OneOfOne/xxhash v1.2.8 // indirect
 	github.com/ProtonMail/go-crypto v1.0.0 // indirect
 	github.com/ThalesIgnite/crypto11 v1.2.5 // indirect
@@ -146,7 +146,7 @@ require (
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/kevinburke/ssh_config v1.2.0 // indirect
-	github.com/klauspost/compress v1.17.8 // indirect
+	github.com/klauspost/compress v1.17.9 // indirect
 	github.com/knqyf263/go-rpmdb v0.0.0-20230723082926-067d98befa60 // indirect
 	github.com/letsencrypt/boulder v0.0.0-20231026200631-000cd05d5491 // indirect
 	github.com/magiconair/properties v1.8.7 // indirect
@@ -163,7 +163,7 @@ require (
 	github.com/nozzle/throttler v0.0.0-20180817012639-2ea982251481 // indirect
 	github.com/oklog/ulid v1.3.1 // indirect
 	github.com/oleiade/reflections v1.0.1 // indirect
-	github.com/open-policy-agent/opa v0.63.0 // indirect
+	github.com/open-policy-agent/opa v0.68.0 // indirect
 	github.com/opencontainers/go-digest v1.0.0 // indirect
 	github.com/opencontainers/image-spec v1.1.0 // indirect
 	github.com/opentracing/opentracing-go v1.2.0 // indirect
@@ -173,10 +173,10 @@ require (
 	github.com/pjbgf/sha1cd v0.3.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/power-devops/perfstat v0.0.0-20210106213030-5aafc221ea8c // indirect
-	github.com/prometheus/client_golang v1.19.0 // indirect
-	github.com/prometheus/client_model v0.6.0 // indirect
-	github.com/prometheus/common v0.51.1 // indirect
-	github.com/prometheus/procfs v0.12.0 // indirect
+	github.com/prometheus/client_golang v1.20.2 // indirect
+	github.com/prometheus/client_model v0.6.1 // indirect
+	github.com/prometheus/common v0.55.0 // indirect
+	github.com/prometheus/procfs v0.15.1 // indirect
 	github.com/protocolbuffers/txtpbfmt v0.0.0-20231025115547-084445ff1adf // indirect
 	github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475 // indirect
 	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
@@ -242,7 +242,6 @@ require (
 	golang.org/x/term v0.24.0 // indirect
 	golang.org/x/text v0.18.0 // indirect
 	golang.org/x/time v0.6.0 // indirect
-	golang.org/x/tools v0.25.0 // indirect
 	golang.org/x/tools/go/vcs v0.1.0-deprecated // indirect
 	golang.org/x/xerrors v0.0.0-20231012003039-104605ab7028 // indirect
 	google.golang.org/api v0.197.0 // indirect
