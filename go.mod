@@ -4,7 +4,7 @@ go 1.23
 
 require (
 	github.com/blang/semver/v4 v4.0.0
-	k8s.io/release v0.17.9
+	k8s.io/release v0.17.10
 	sigs.k8s.io/release-utils v0.8.5
 )
 
@@ -255,9 +255,9 @@ require (
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	k8s.io/api v0.28.3 // indirect
+	k8s.io/api v0.28.4 // indirect
 	k8s.io/apimachinery v0.31.1 // indirect
-	k8s.io/client-go v0.28.3 // indirect
+	k8s.io/client-go v0.28.4 // indirect
 	k8s.io/klog/v2 v2.130.1 // indirect
 	k8s.io/kube-openapi v0.0.0-20240228011516-70dd3763d340 // indirect
 	k8s.io/utils v0.0.0-20240711033017-18e509b52bc8 // indirect
