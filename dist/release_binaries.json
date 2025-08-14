@@ -1,1189 +1,1189 @@
 {
   "Binaries": [
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "darwin",
       "Architecture": "amd64",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "darwin",
       "Architecture": "amd64",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "darwin",
       "Architecture": "arm64",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "darwin",
       "Architecture": "arm64",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "386",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "386",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "apiextensions-apiserver"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kube-aggregator"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kube-apiserver"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kube-controller-manager"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kube-log-runner"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kube-proxy"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kube-scheduler"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kubeadm"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kubelet"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "mounter"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "arm",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "arm",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "apiextensions-apiserver"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kube-aggregator"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kube-apiserver"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kube-controller-manager"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kube-log-runner"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kube-proxy"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kube-scheduler"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kubeadm"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kubelet"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "mounter"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "apiextensions-apiserver"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kube-aggregator"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kube-apiserver"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kube-controller-manager"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kube-log-runner"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kube-proxy"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kube-scheduler"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kubeadm"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kubelet"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "mounter"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "apiextensions-apiserver"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kube-aggregator"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kube-apiserver"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kube-controller-manager"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kube-log-runner"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kube-proxy"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kube-scheduler"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kubeadm"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kubelet"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "mounter"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "windows",
       "Architecture": "386",
       "Name": "kubectl-convert.exe"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "windows",
       "Architecture": "386",
       "Name": "kubectl.exe"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "windows",
       "Architecture": "amd64",
       "Name": "kube-log-runner.exe"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "windows",
       "Architecture": "amd64",
       "Name": "kube-proxy.exe"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "windows",
       "Architecture": "amd64",
       "Name": "kubeadm.exe"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "windows",
       "Architecture": "amd64",
       "Name": "kubectl-convert.exe"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "windows",
       "Architecture": "amd64",
       "Name": "kubectl.exe"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "windows",
       "Architecture": "amd64",
       "Name": "kubelet.exe"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "windows",
       "Architecture": "arm64",
       "Name": "kubectl-convert.exe"
     },
     {
-      "Version": "v1.33.3",
+      "Version": "v1.33.4",
       "OperatingSystem": "windows",
       "Architecture": "arm64",
       "Name": "kubectl.exe"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "darwin",
       "Architecture": "amd64",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "darwin",
       "Architecture": "amd64",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "darwin",
       "Architecture": "arm64",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "darwin",
       "Architecture": "arm64",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "386",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "386",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "apiextensions-apiserver"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kube-aggregator"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kube-apiserver"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kube-controller-manager"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kube-log-runner"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kube-proxy"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kube-scheduler"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kubeadm"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kubelet"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "mounter"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "arm",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "arm",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "apiextensions-apiserver"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kube-aggregator"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kube-apiserver"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kube-controller-manager"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kube-log-runner"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kube-proxy"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kube-scheduler"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kubeadm"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kubelet"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "mounter"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "apiextensions-apiserver"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kube-aggregator"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kube-apiserver"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kube-controller-manager"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kube-log-runner"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kube-proxy"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kube-scheduler"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kubeadm"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kubelet"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "mounter"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "apiextensions-apiserver"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kube-aggregator"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kube-apiserver"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kube-controller-manager"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kube-log-runner"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kube-proxy"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kube-scheduler"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kubeadm"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kubelet"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "mounter"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "windows",
       "Architecture": "386",
       "Name": "kubectl-convert.exe"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "windows",
       "Architecture": "386",
       "Name": "kubectl.exe"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "windows",
       "Architecture": "amd64",
       "Name": "kube-log-runner.exe"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "windows",
       "Architecture": "amd64",
       "Name": "kube-proxy.exe"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "windows",
       "Architecture": "amd64",
       "Name": "kubeadm.exe"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "windows",
       "Architecture": "amd64",
       "Name": "kubectl-convert.exe"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "windows",
       "Architecture": "amd64",
       "Name": "kubectl.exe"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "windows",
       "Architecture": "amd64",
       "Name": "kubelet.exe"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "windows",
       "Architecture": "arm64",
       "Name": "kubectl-convert.exe"
     },
     {
-      "Version": "v1.32.7",
+      "Version": "v1.32.8",
       "OperatingSystem": "windows",
       "Architecture": "arm64",
       "Name": "kubectl.exe"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "darwin",
       "Architecture": "amd64",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "darwin",
       "Architecture": "amd64",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "darwin",
       "Architecture": "arm64",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "darwin",
       "Architecture": "arm64",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "386",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "386",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "apiextensions-apiserver"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kube-aggregator"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kube-apiserver"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kube-controller-manager"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kube-log-runner"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kube-proxy"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kube-scheduler"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kubeadm"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "kubelet"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "amd64",
       "Name": "mounter"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "arm",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "arm",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "apiextensions-apiserver"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kube-aggregator"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kube-apiserver"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kube-controller-manager"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kube-log-runner"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kube-proxy"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kube-scheduler"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kubeadm"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "kubelet"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "arm64",
       "Name": "mounter"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "apiextensions-apiserver"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kube-aggregator"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kube-apiserver"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kube-controller-manager"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kube-log-runner"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kube-proxy"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kube-scheduler"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kubeadm"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "kubelet"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "ppc64le",
       "Name": "mounter"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "apiextensions-apiserver"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kube-aggregator"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kube-apiserver"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kube-controller-manager"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kube-log-runner"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kube-proxy"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kube-scheduler"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kubeadm"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kubectl"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kubectl-convert"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "kubelet"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "linux",
       "Architecture": "s390x",
       "Name": "mounter"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "windows",
       "Architecture": "386",
       "Name": "kubectl-convert.exe"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "windows",
       "Architecture": "386",
       "Name": "kubectl.exe"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "windows",
       "Architecture": "amd64",
       "Name": "kube-log-runner.exe"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "windows",
       "Architecture": "amd64",
       "Name": "kube-proxy.exe"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "windows",
       "Architecture": "amd64",
       "Name": "kubeadm.exe"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "windows",
       "Architecture": "amd64",
       "Name": "kubectl-convert.exe"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "windows",
       "Architecture": "amd64",
       "Name": "kubectl.exe"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "windows",
       "Architecture": "amd64",
       "Name": "kubelet.exe"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "windows",
       "Architecture": "arm64",
       "Name": "kubectl-convert.exe"
     },
     {
-      "Version": "v1.31.11",
+      "Version": "v1.31.12",
       "OperatingSystem": "windows",
       "Architecture": "arm64",
       "Name": "kubectl.exe"
@@ -1591,9 +1591,9 @@
     "windows"
   ],
   "AllVersions": [
-    "v1.33.3",
-    "v1.32.7",
-    "v1.31.11",
+    "v1.33.4",
+    "v1.32.8",
+    "v1.31.12",
     "v1.30.14"
   ],
   "AllArch": [
