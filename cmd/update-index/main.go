@@ -32,8 +32,8 @@ import (
 
 	"github.com/blang/semver/v4"
 	"k8s.io/release/pkg/release"
+	"sigs.k8s.io/release-utils/helpers"
 	"sigs.k8s.io/release-utils/http"
-	"sigs.k8s.io/release-utils/util"
 )
 
 const (
@@ -137,7 +137,7 @@ func (b Binary) Link() string {
 }
 
 func (b Binary) version() (semver.Version, error) {
-	tag, err := util.TagStringToSemver(b.Version)
+	tag, err := helpers.TagStringToSemver(b.Version)
 	if err != nil {
 		return semver.Version{}, fmt.Errorf("parse tag %s: %w", b.Version, err)
 	}
@@ -178,7 +178,7 @@ func run() error {
 
 	log.Printf("Got latest stable version: %s", latestStable)
 
-	latestStableSemver, err := util.TagStringToSemver(string(latestStable))
+	latestStableSemver, err := helpers.TagStringToSemver(string(latestStable))
 	if err != nil {
 		return fmt.Errorf("convert latest stable version to semver: %w", err)
 	}
