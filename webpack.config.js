@@ -15,7 +15,8 @@ limitations under the License.
 */
 
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -34,12 +35,23 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
+              api: 'modern-compiler',
               sourceMap: true,
-              // options...
             }
           }
         ]
     }]
+  },
+  optimization: {
+    minimizer: [
+      '...',
+      new CssMinimizerPlugin(),
+    ],
+  },
+  performance: {
+    hints: 'warning',
+    maxAssetSize: 800 * 1024,
+    maxEntrypointSize: 800 * 1024,
   },
   plugins: [
     new MiniCssExtractPlugin({
