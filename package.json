@@ -15,12 +15,13 @@
   "devDependencies": {
     "bulma": "^1.0.0",
     "css-loader": "^7.0.0",
+    "css-minimizer-webpack-plugin": "^7.0.4",
     "mini-css-extract-plugin": "^2.2.0",
-    "node-sass": "^9.0.0",
-    "sass-loader": "^16.0.0",
+    "npm-check-updates": "^19.3.1",
+    "sass": "^1.97.3",
+    "sass-loader": "^16.0.7",
     "style-loader": "^4.0.0",
-    "webpack": "^5.51.1",
-    "webpack-cli": "^5.0.0",
-    "npm-check-updates": "^19.3.1"
+    "webpack": "^5.105.1",
+    "webpack-cli": "^5.0.0"
   }
 }
