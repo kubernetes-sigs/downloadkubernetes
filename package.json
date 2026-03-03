@@ -15,7 +15,7 @@
   "devDependencies": {
     "bulma": "^1.0.0",
     "css-loader": "^7.0.0",
-    "css-minimizer-webpack-plugin": "^7.0.4",
+    "css-minimizer-webpack-plugin": "^8.0.0",
     "mini-css-extract-plugin": "^2.2.0",
     "npm-check-updates": "^19.3.1",
     "sass": "^1.97.3",
