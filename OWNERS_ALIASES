@@ -11,13 +11,13 @@ aliases:
   release-engineering-approvers:
     - cici37 # Release Manager
     - cpanato # subproject owner / Release Manager
-    - jeremyrickard # SIG Chair
+    - jeremyrickard # subproject owner / Release Manager
     - justaugustus # subproject owner / Release Manager
     - palnabarun # Release Manager
     - puerco # subproject owner / Release Manager
     - saschagrunert # subproject owner / Release Manager
-    - Verolop # SIG Technical Lead
     - xmudrii # Release Manager
+    - Verolop # subproject owner / Release Manager
   release-engineering-reviewers:
     - ameukam # Release Manager Associate
     - jimangel # Release Manager Associate
