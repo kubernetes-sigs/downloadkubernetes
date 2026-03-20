@@ -56,7 +56,7 @@ func (b Binaries) AllArch() []string {
 	for _, bin := range b {
 		allVersions[bin.Architecture] = struct{}{}
 	}
-	out := []string{}
+	out := make([]string, 0, len(allVersions))
 	for version := range allVersions {
 		out = append(out, version)
 	}
@@ -68,7 +68,7 @@ func (b Binaries) AllOSes() []string {
 	for _, bin := range b {
 		allVersions[bin.OperatingSystem] = struct{}{}
 	}
-	out := []string{}
+	out := make([]string, 0, len(allVersions))
 	for version := range allVersions {
 		out = append(out, version)
 	}
@@ -81,7 +81,7 @@ func (b Binaries) AllBins() []string {
 		split := strings.Split(bin.Name, ".")
 		allVersions[split[0]] = struct{}{}
 	}
-	out := []string{}
+	out := make([]string, 0, len(allVersions))
 	for version := range allVersions {
 		out = append(out, version)
 	}
