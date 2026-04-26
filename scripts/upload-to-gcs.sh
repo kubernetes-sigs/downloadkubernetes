@@ -21,10 +21,10 @@ set -o pipefail
 rm -rf dist/index.html
 gcloud storage cp gs://${BUCKET_NAME}/index.html dist/index.html
 
-make verify-index
-VERIFY_EXIT_CODE=$?
-if [ $VERIFY_EXIT_CODE -ne 1 ]; then
-  exit $VERIFY_EXIT_CODE
+VERIFY_EXIT_CODE=0
+make verify-index || VERIFY_EXIT_CODE=$?
+if [ "$VERIFY_EXIT_CODE" -eq 0 ]; then
+  exit 0
 fi
 
 ## We run this code block if we detect that a new version has been released
@@ -41,7 +41,7 @@ npm install
 npm run build-prod
 
 # https://www.fastly.com/documentation/guides/full-site-delivery/purging/working-with-surrogate-keys/
-gcloud storage cp dist/ gs://${BUCKET_NAME}/ --recursive \
+gcloud storage cp dist/* gs://${BUCKET_NAME}/ --recursive \
   --custom-metadata="Surrogate-Key=downloadkubernetes" \
   --custom-metadata="Surrogate-Control=max-age=86400"
 

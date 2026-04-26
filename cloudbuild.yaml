@@ -20,3 +20,5 @@ steps:
 substitutions:
   _BUCKET_NAME: random-bucket
   _FASTLY_SERVICE_NAME: dl.k8s.dev
+tags:
+  - downloadkubernetes
