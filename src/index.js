@@ -47,20 +47,9 @@ function eventListener(kind) {
     });
 }
 
-// make the click link work
 document.querySelectorAll(".copy").forEach(link => {
     link.addEventListener('click', (evt) => {
         evt.preventDefault();
-
-        let el = document.createElement("textarea");
-        el.value = link.href;
-        el.setAttribute("readonly", "");
-        el.style.position = 'absolute';
-        el.style.left = '-9999px';
-        document.body.appendChild(el);
-        el.select();
-        document.execCommand("copy");
-        document.body.removeChild(el);
-        return false;
+        navigator.clipboard.writeText(link.href);
     });
 });
