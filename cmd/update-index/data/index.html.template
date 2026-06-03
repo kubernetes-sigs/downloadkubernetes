@@ -28,7 +28,7 @@
                             <a class="has-text-light" href="https://twitter.com/kubernetesio"><i class="fa-3x fab fa-twitter"></i></a>
                         </span>
                         <span class="icon is-large my-icon">
-                            <a class="has-text-light" href="http://slack.k8s.io"><i class="fa-3x fab fa-slack"></i></a>
+                            <a class="has-text-light" href="https://slack.k8s.io"><i class="fa-3x fab fa-slack"></i></a>
                         </span>
                         <span class="icon is-large my-icon">
                             <a class="has-text-light" href="https://github.com/kubernetes-sigs/downloadkubernetes"><i class="fa-3x fab fa-github"></i></a>
@@ -138,7 +138,7 @@
             <div class="column is-6">
                 <div class="has-text-centered">
                 <small class="has-text-white is-inline-block">© {{.Year}} The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="has-text-white">CC BY 4.0</a></small>
-                </br>
+                <br>
                 <small class="has-text-white">Copyright © {{.Year}} The Linux Foundation ®. All
                     rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of
                     trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage" class="has-text-white">Trademark Usage page</a></small>
@@ -173,16 +173,4 @@
         </div>
     </footer>
 </body>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142101933-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-142101933-1');
-</script>
-
 </html>
-
-

@@ -26,6 +26,7 @@ import (
 	"html/template"
 	"log"
 	"os"
+	"slices"
 	"sort"
 	"strings"
 	"time"
@@ -52,39 +53,42 @@ type Binary struct {
 type Binaries []Binary
 
 func (b Binaries) AllArch() []string {
-	allVersions := map[string]struct{}{}
+	seen := map[string]struct{}{}
 	for _, bin := range b {
-		allVersions[bin.Architecture] = struct{}{}
+		seen[bin.Architecture] = struct{}{}
 	}
-	out := make([]string, 0, len(allVersions))
-	for version := range allVersions {
-		out = append(out, version)
+	out := make([]string, 0, len(seen))
+	for arch := range seen {
+		out = append(out, arch)
 	}
+	slices.Sort(out)
 	return out
 }
 
 func (b Binaries) AllOSes() []string {
-	allVersions := map[string]struct{}{}
+	seen := map[string]struct{}{}
 	for _, bin := range b {
-		allVersions[bin.OperatingSystem] = struct{}{}
+		seen[bin.OperatingSystem] = struct{}{}
 	}
-	out := make([]string, 0, len(allVersions))
-	for version := range allVersions {
-		out = append(out, version)
+	out := make([]string, 0, len(seen))
+	for val := range seen {
+		out = append(out, val)
 	}
+	slices.Sort(out)
 	return out
 }
 
 func (b Binaries) AllBins() []string {
-	allVersions := map[string]struct{}{}
+	seen := map[string]struct{}{}
 	for _, bin := range b {
 		split := strings.Split(bin.Name, ".")
-		allVersions[split[0]] = struct{}{}
+		seen[split[0]] = struct{}{}
 	}
-	out := make([]string, 0, len(allVersions))
-	for version := range allVersions {
-		out = append(out, version)
+	out := make([]string, 0, len(seen))
+	for name := range seen {
+		out = append(out, name)
 	}
+	slices.Sort(out)
 	return out
 }
 
@@ -166,7 +170,7 @@ func run() error {
 
 	err := fs.Parse(os.Args[1:])
 	if err != nil {
-		return fmt.Errorf("failed to parsing the flags: %w", err)
+		return fmt.Errorf("failed parsing the flags: %w", err)
 	}
 
 	agent := http.NewAgent()
@@ -244,21 +248,17 @@ func run() error {
 	}
 	sort.Sort(Binaries(binaries))
 
-	tmpl, err := template.New("index.html.template").Funcs(map[string]interface{}{
-		"clean": interface{}(clean),
+	tmpl, err := template.New("index.html.template").Funcs(template.FuncMap{
+		"clean": clean,
 	}).ParseFiles(args.templateFile)
 	if err != nil {
 		return fmt.Errorf("parse template: %w", err)
 	}
 	var buf bytes.Buffer
 
-	// sort those bins
 	bins := Binaries(binaries).AllBins()
-	sort.Strings(bins)
 	oses := Binaries(binaries).AllOSes()
-	sort.Strings(oses)
 	arch := Binaries(binaries).AllArch()
-	sort.Strings(arch)
 
 	if err := tmpl.Execute(&buf, struct {
 		Binaries    Binaries

@@ -18,8 +18,9 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-rm -rf dist/index.html
+rm -rf dist/index.html dist/release_binaries.json
 gcloud storage cp gs://${BUCKET_NAME}/index.html dist/index.html
+gcloud storage cp gs://${BUCKET_NAME}/release_binaries.json dist/release_binaries.json
 
 VERIFY_EXIT_CODE=0
 make verify-index || VERIFY_EXIT_CODE=$?

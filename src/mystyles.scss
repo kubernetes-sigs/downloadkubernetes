@@ -16,14 +16,12 @@ limitations under the License.
 
 @charset "utf-8";
 
-@import 'bulma/css/bulma.css';
+@use 'bulma/sass/utilities/derived-variables' with (
+    $primary: hsl(219, 76%, 55%)
+);
+@use 'bulma/sass';
 
 $kubernetes: hsl(219, 76%, 55%);
-$primary: $kubernetes;
-
-.hero.is-primary {
-    background-color: $kubernetes;
-}
 
 .title {
     color: #fff;
@@ -33,22 +31,13 @@ $primary: $kubernetes;
     color: #fff;
 }
 
+.is-success,
 .button.is-success {
     background-color: $kubernetes;
     color: #fff;
 }
 
-.span.button.is-success {
-    background-color: $kubernetes;
-    color: #fff;
-}
-
 .footer {
-    background-color: $kubernetes;
-    color: #fff;
-}
-
-.is-success {
     background-color: $kubernetes;
     color: #fff;
 }

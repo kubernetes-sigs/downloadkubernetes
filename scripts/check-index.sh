@@ -18,47 +18,38 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-# Get the past 4 Kubernetes releases not counting the latest available
-# example: 1.20 (latest), 3 last releases: 1.19, 1.18, 1.17
-LASTRELEASES=3
-COUNTER=0
-RELEASES=()
 INDEXFILE=dist/index.html
+DATAFILE=dist/release_binaries.json
 
-LATEST=$(curl -Ls https://dl.k8s.io/release/stable.txt)
-LATESTMAJOR=$(echo "$LATEST" | cut -dv -d. -f1)
-LATESTMINOR=$(echo "$LATEST" | cut -d. -f2)
-RELEASES+=("$LATEST")
+if [ ! -f "$DATAFILE" ]; then
+  echo "ERROR: $DATAFILE not found, run 'make update-index' first"
+  exit 1
+fi
 
-function check_index {
-  status=()
-  for tag in "${RELEASES[@]}"; do
-    result=$(grep "$tag" "$INDEXFILE" >/dev/null; echo $?)
-    if [ "$result" -ge 1 ]; then
-      echo "$tag not found in the index.html, please update the index.html file"
-      status[${#status[@]}]=$result
-    fi
-  done
+if [ ! -f "$INDEXFILE" ]; then
+  echo "ERROR: $INDEXFILE not found"
+  exit 1
+fi
 
-  for value in "${status[@]}"
-  do
-    if [[ "$value" -ge 1 ]]; then
-      exit 1
-    fi
-  done
-  echo "$INDEXFILE is up-to-date"
-}
+if ! command -v jq &>/dev/null; then
+  echo "ERROR: jq is required but not installed"
+  exit 1
+fi
 
-function get_kubernetes_releases {
-  echo "Getting Kubernetes releases"
-  while [  $COUNTER -lt $LASTRELEASES ]; do
-    (( LATESTMINOR-- ))
-    TEMP=$(curl -Ls https://dl.k8s.io/release/stable-"${LATESTMAJOR:1}"."$LATESTMINOR".txt)
-    RELEASES+=("$TEMP")
-    (( COUNTER++ ))
-  done
-  echo "Will validate the index.html using the following releases: " "${RELEASES[@]}"
-}
+mapfile -t RELEASES < <(jq -r '.AllVersions[]' "$DATAFILE")
 
-get_kubernetes_releases || exit 1
-check_index || exit 1
+echo "Validating $INDEXFILE using releases: ${RELEASES[*]}"
+
+failed=false
+for tag in "${RELEASES[@]}"; do
+  if ! grep -q "$tag" "$INDEXFILE"; then
+    echo "$tag not found in $INDEXFILE, please update the index.html file"
+    failed=true
+  fi
+done
+
+if [ "$failed" = true ]; then
+  exit 1
+fi
+
+echo "$INDEXFILE is up-to-date"
