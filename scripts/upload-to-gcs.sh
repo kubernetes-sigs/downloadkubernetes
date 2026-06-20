@@ -19,8 +19,20 @@ set -o nounset
 set -o pipefail
 
 rm -rf dist/index.html dist/release_binaries.json
-gcloud storage cp gs://${BUCKET_NAME}/index.html dist/index.html
-gcloud storage cp gs://${BUCKET_NAME}/release_binaries.json dist/release_binaries.json
+
+download_if_exists() {
+  local source=$1
+  local destination=$2
+
+  if gcloud storage objects describe "$source" >/dev/null; then
+    gcloud storage cp "$source" "$destination"
+  else
+    echo "Skipping missing object: $source"
+  fi
+}
+
+download_if_exists "gs://${BUCKET_NAME}/index.html" dist/index.html
+download_if_exists "gs://${BUCKET_NAME}/release_binaries.json" dist/release_binaries.json
 
 VERIFY_EXIT_CODE=0
 make verify-index || VERIFY_EXIT_CODE=$?
@@ -50,4 +62,3 @@ npm install -g @fastly/cli@13.3.0
 
 fastly purge --service-name=${FASTLY_SERVICE_NAME} \
   --key downloadkubernetes --non-interactive
-
