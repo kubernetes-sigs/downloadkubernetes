@@ -17,7 +17,7 @@
     "css-loader": "^7.0.0",
     "css-minimizer-webpack-plugin": "^8.0.0",
     "mini-css-extract-plugin": "^2.2.0",
-    "npm-check-updates": "^22.0.1",
+    "npm-check-updates": "^23.0.0",
     "sass": "^1.97.3",
     "sass-loader": "^17.0.0",
     "style-loader": "^4.0.0",
