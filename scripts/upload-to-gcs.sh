@@ -31,8 +31,9 @@ download_if_exists() {
   fi
 }
 
+make update-index
+
 download_if_exists "gs://${BUCKET_NAME}/index.html" dist/index.html
-download_if_exists "gs://${BUCKET_NAME}/release_binaries.json" dist/release_binaries.json
 
 VERIFY_EXIT_CODE=0
 make verify-index || VERIFY_EXIT_CODE=$?
@@ -58,7 +59,7 @@ gcloud storage cp dist/* gs://${BUCKET_NAME}/ --recursive \
   --custom-metadata="Surrogate-Key=downloadkubernetes" \
   --custom-metadata="Surrogate-Control=max-age=86400"
 
-npm install -g @fastly/cli@13.3.0
+npm install -g @fastly/cli@16.0.0
 
-fastly purge --service-name=${FASTLY_SERVICE_NAME} \
+fastly service purge --service-name=${FASTLY_SERVICE_NAME} \
   --key downloadkubernetes --non-interactive
